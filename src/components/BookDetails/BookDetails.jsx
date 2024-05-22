@@ -1,5 +1,8 @@
-import { NavLink, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Tags from "../Tags/Tags";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import { savedReadBooks, savedWishlistBooks } from "../../utility/localstorage";
 
 
 
@@ -8,15 +11,24 @@ const BookDetails = () => {
     const {id} = useParams();
     const idInt = parseInt(id);
     const book = books.find(book => book.bookId === idInt);
-    console.log(book, id)
+    // console.log(book, id)
     const {review, image, bookName, author, category, tags, totalPages, publisher, yearOfPublishing, rating} = book;
+
+    const handleRead = () => {
+        savedReadBooks(idInt);
+        toast('You have added in Readlist the book!');
+    }
+    const handleWishlist = () => {
+        savedWishlistBooks(idInt);
+        toast('You have added in Wishlist the book!');
+    }
 
     return (
         <div className="md:flex md:justify-center md:items-center gap-6 mt-16">
-            <div className="p-16 bg-[#F3F3F3] rounded-2xl w-full md:w-1/2 flex justify-center items-center">
+            <div className="p-16 bg-[#F3F3F3] rounded-2xl w-full md:w-1/2 flex  justify-center items-center">
                 <img className="md:w-3/5" src={image} alt="BookCover" />
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="w-full md:w-1/2 p-4">
             <h2 className="text-4xl font-bold">{bookName}</h2>
             <p className="mb-3 mt-2">By: {author}</p>
             <p className="py-2 border-t border-b border-solid">{category}</p>
@@ -44,9 +56,10 @@ const BookDetails = () => {
                 <span className="flex justify-start">Rating: </span>
                 <span className="font-bold flex justify-end">{rating}</span> </p>
                 <div className="flex mt-4 ">
-                    <NavLink><button className="btn btn-outline mr-4">Read</button></NavLink>
-                    <NavLink><button className="btn btn-outline">Wishlist</button></NavLink>
+                    <button onClick={handleRead} className="btn btn-outline mr-4">Read</button>
+                    <button onClick={handleWishlist} className="btn btn-outline">Wishlist</button>
                 </div>
+                <ToastContainer />
             </div>
         </div>
     );
