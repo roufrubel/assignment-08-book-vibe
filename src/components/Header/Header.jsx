@@ -20,7 +20,7 @@ const Header = () => {
       }
       </ul>
     </div>
-    <a className="btn btn-ghost text-2xl font-bold">Book Vibe</a>
+    <a className="btn btn-ghost md:text-2xl font-bold">Book Vibe</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-[18px]">
@@ -30,8 +30,8 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-2">
-    <a className="btn text-[18px] font-semibold bg-[#23BE0A] text-white">Sign Up</a>
-    <a className="btn text-[18px] font-semibold bg-[#59C6D2] text-white">Sign In</a>
+    <a className="btn md:text-[18px] font-semibold bg-[#23BE0A] text-white">Sign Up</a>
+    <a className="btn md:text-[18px] font-semibold bg-[#59C6D2] text-white">Sign In</a>
   </div>
 </div>
     );
