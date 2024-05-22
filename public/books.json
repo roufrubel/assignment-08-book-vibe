@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://example.com/great_gatsby.jpg",
+      "review": "A classic novel that explores themes of wealth, society, and the American Dream.",
+      "totalPages": 180,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classic", "American Literature", "1920s", "Wealth"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 2,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://example.com/to_kill_a_mockingbird.jpg",
+      "review": "A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice.",
+      "totalPages": 281,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Classic", "Civil Rights", "Southern Gothic", "Legal Drama"],
+      "publisher": "J.B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 3,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://example.com/1984.jpg",
+      "review": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
+      "totalPages": 328,
+      "rating": 4.7,
+      "category": "Science Fiction",
+      "tags": ["Dystopian", "Political Fiction", "Totalitarianism", "Classic"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 4,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "https://example.com/pride_and_prejudice.jpg",
+      "review": "A romantic novel that charts the emotional development of the protagonist, Elizabeth Bennet.",
+      "totalPages": 279,
+      "rating": 4.6,
+      "category": "Romance",
+      "tags": ["Classic", "Romance", "British Literature", "Satire"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 5,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://example.com/catcher_in_the_rye.jpg",
+      "review": "A novel about teenage rebellion and angst, capturing the complex emotions of adolescence.",
+      "totalPages": 214,
+      "rating": 4.3,
+      "category": "Fiction",
+      "tags": ["Classic", "Coming-of-Age", "Teenage Angst", "1950s"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "image": "https://example.com/the_hobbit.jpg",
+      "review": "A fantasy novel that introduces the world of Middle-earth and follows the adventures of Bilbo Baggins.",
+      "totalPages": 310,
+      "rating": 4.7,
+      "category": "Fantasy",
+      "tags": ["Fantasy", "Adventure", "Middle-earth", "Classic"],
+      "publisher": "George Allen & Unwin",
+      "yearOfPublishing": 1937
+    }
+  ]
+  
