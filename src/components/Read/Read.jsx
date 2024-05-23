@@ -6,24 +6,58 @@ import { FaRegStar } from "react-icons/fa6";
 import { FiMapPin } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { MdInsertPageBreak } from "react-icons/md";
+import { FaChevronDown } from "react-icons/fa";
 
 
 const Read = () => {
     const books = useLoaderData();
     const [storedReadBook, setStoredReadBook] = useState([]);
+    const [sortingBooks, setSortingBooks] = useState([]);
+
+    const handleFilter = filter => {
+        if(filter === 'year') {
+            const publishYear =storedReadBook.filter(book => book.yearOfPublishing);
+            const publishYearSort = publishYear.sort();
+            // console.log(publishYearSort)
+            setSortingBooks(publishYearSort)
+        }
+        if(filter === 'pages') {
+            const pagesNumber =storedReadBook.filter(book => book.totalPages);
+            const pagesNumberSort = pagesNumber.sort();
+            setSortingBooks(pagesNumberSort)
+            // console.log(pagesNumberSort)
+        }
+        if(filter === 'rating') {
+            const ratings =storedReadBook.filter(book => book.rating);
+            const ratingsSort = ratings.sort();
+            setSortingBooks(ratingsSort)
+            // console.log(ratingsSort)
+        }
+    }
 
     useEffect( () => {
         const storedReadIds = getStoredReadBooks();
         if(storedReadIds.length > 0) {
             const storedReadBooks = books.filter(book => storedReadIds.includes(book.bookId));
-            setStoredReadBook(storedReadBooks)
+            setStoredReadBook(storedReadBooks);
+            setSortingBooks(storedReadBooks);
         }
     }, [books])
     return (
         <div className="max-w-3xl px-6 py-6">
 
+<div className="dropdown dropdown-bottom flex justify-center">
+            <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white">Sort by <FaChevronDown className="mr-2"/></div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li onClick={() => handleFilter('rating')}><a>Rating</a></li>
+            <li onClick={() => handleFilter('pages')}><a>Number
+                of pages</a></li>
+                <li onClick={() => handleFilter('year')}><a>Published year</a></li>
+                </ul>
+            </div>
+
             {
-                storedReadBook.map(book => <div key={book.bookId} className="p-6 rounded-2xl border flex gap-6 mb-6">          
+                sortingBooks.map(book => <div key={book.bookId} className="p-6 rounded-2xl border flex gap-6 mb-6">          
 
                 <div className="flex justify-center bg-[#F3F3F3] rounded-2xl mb-2">
                 <img className="p-6" src={book.image} alt="" />
