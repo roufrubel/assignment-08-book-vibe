@@ -18,7 +18,7 @@ const Read = () => {
             const storedReadBooks = books.filter(book => storedReadIds.includes(book.bookId));
             setStoredReadBook(storedReadBooks)
         }
-    }, [])
+    }, [books])
     return (
         <div className="max-w-3xl px-6 py-6">
 

@@ -1,9 +1,9 @@
-
+import React from 'react';
 
 const PagesToRead = () => {
     return (
         <div>
-            <h4>Pages to read</h4>
+            <h2>Pages to read</h2>
         </div>
     );
 };

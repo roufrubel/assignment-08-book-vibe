@@ -47,6 +47,7 @@ const router = createBrowserRouter([
       {
         path: "/pagestoread",
         element: <PagesToRead></PagesToRead>,
+        loader: () => fetch('../books.json')
       },
       {
         path: '/book/:id',
