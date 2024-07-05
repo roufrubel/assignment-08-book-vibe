@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Tags from "../Tags/Tags";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { savedReadBooks, savedWishlistBooks } from "../../utility/localstorage";
 
 

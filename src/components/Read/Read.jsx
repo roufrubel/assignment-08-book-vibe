@@ -15,24 +15,37 @@ const Read = () => {
     const [sortingBooks, setSortingBooks] = useState([]);
 
     const handleFilter = filter => {
+        // new
+        let sortedBooks = [...storedReadBook];
         if(filter === 'year') {
-            const publishYear =storedReadBook.filter(book => book.yearOfPublishing);
-            const publishYearSort = publishYear.sort();
-            // console.log(publishYearSort)
-            setSortingBooks(publishYearSort)
+            // const publishYear =storedReadBook.filter(book => book.yearOfPublishing);
+            // const publishYearSort = publishYear.sort();
+            // // console.log(publishYearSort)
+            // setSortingBooks(publishYearSort)
+
+             // new
+             sortedBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
         }
         if(filter === 'pages') {
-            const pagesNumber =storedReadBook.filter(book => book.totalPages);
-            const pagesNumberSort = pagesNumber.sort();
-            setSortingBooks(pagesNumberSort)
+                        // const pagesNumber =storedReadBook.filter(book => book.totalPages);
+            // const pagesNumberSort = pagesNumber.sort();
+            // setSortingBooks(pagesNumberSort)
             // console.log(pagesNumberSort)
+
+            // new
+            sortedBooks.sort((a, b) => a.totalPages - b.totalPages);
         }
         if(filter === 'rating') {
-            const ratings =storedReadBook.filter(book => book.rating);
-            const ratingsSort = ratings.sort();
-            setSortingBooks(ratingsSort)
+            // const ratings =storedReadBook.filter(book => book.rating);
+            // const ratingsSort = ratings.sort();
+            // setSortingBooks(ratingsSort)
             // console.log(ratingsSort)
+
+            // new
+            sortedBooks.sort((a, b) => b.rating - a.rating);
         }
+        // new
+        setSortingBooks(sortedBooks);
     }
 
     useEffect( () => {
